@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Dashboard - MK Training Center</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #1f0036, #32004d);
+      color: #fff;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    .dashboard-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .dashboard-header h1 {
+      font-size: 2rem;
+      color: #ffb3ff;
+    }
+    .dashboard-header img { height: 50px; }
+    .dashboard-container {
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 2rem;
+      overflow-x: auto;
+      box-shadow: 0 0 20px rgba(255, 179, 255, 0.2);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      color: #fff;
+    }
+    th, td {
+      padding: 1rem;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    th {
+      background: #a259ff;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+    }
+    tr:nth-child(even) {
+      background: rgba(255, 255, 255, 0.03);
+    }
+    @media (max-width: 768px) {
+      th, td {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="dashboard-header">
+    <h1>Admin Dashboard</h1>
+    <img src="https://i.ibb.co/YBMc5pn4/logo-Pica.png" alt="MK Training Logo" />
+  </div>
+
+  <div class="dashboard-container">
+    <h2 style="margin-bottom: 1rem; color: #ffb3ff;">Registered Student Details</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Full Name</th>
+          <th>Email ID</th>
+          <th>Phone Number</th>
+          <th>Course</th>
+          <th>Skills & Interests</th>
+          <th>Resume</th>
+        </tr>
+      </thead>
+      <tbody id="studentTableBody">
+        <tr><td colspan="6">Loading student data...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+  window.onload = function () {
+    fetch("http://localhost:8084/api/students") // Make sure this matches your backend API
+      .then(response => response.json())
+      .then(students => {
+        const tbody = document.getElementById("studentTableBody");
+        if (students.length === 0) {
+          tbody.innerHTML = "<tr><td colspan='6'>No registrations found.</td></tr>";
+        } else {
+          tbody.innerHTML = "";
+          students.forEach(student => {
+            tbody.innerHTML += `
+              <tr>
+                <td>${student.name}</td>
+                <td>${student.email}</td>
+                <td>${student.phone}</td>
+                <td>${student.course}</td>
+                <td>${student.skills}</td>
+                <td>${student.resume}</td>
+              </tr>
+            `;
+          });
+        }
+      })
+      .catch(error => {
+        console.error("Error fetching data:", error);
+        document.getElementById("studentTableBody").innerHTML = "<tr><td colspan='6'>Error loading data</td></tr>";
+      });
+  };
+</script>
+
+
+</body>
+</html>

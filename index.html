@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MK Training Center | Learn. Evolve. Succeed.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at center, #1f0036, #0a0019);
+      color: #ffffff;
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+    
+
+    .floating-shapes div {
+      position: absolute;
+      background: #a259ff;
+      opacity: 0.2;
+      border-radius: 10px;
+      animation: float 10s infinite ease-in-out alternate;
+    }
+
+    .cube { width: 60px; height: 60px; background: linear-gradient(145deg, #a259ff, #612d9b); transform: rotateX(45deg) rotateY(45deg); }
+    .ring { width: 60px; height: 60px; border: 6px solid #a259ff; border-radius: 50%; background: transparent; }
+    .sphere { width: 40px; height: 40px; border-radius: 50%; background: #a259ff; }
+
+    .shape1 { top: 5%; left: 10%; animation-delay: 0s; }
+    .shape2 { top: 80%; left: 20%; animation-delay: 2s; }
+    .shape3 { top: 20%; left: 70%; animation-delay: 1s; }
+    .shape4 { top: 60%; left: 80%; animation-delay: 3s; }
+
+    @keyframes float {
+      0% { transform: translateY(0px) rotate(0deg); }
+      100% { transform: translateY(-40px) rotate(360deg); }
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8% 10%;
+      gap: 4rem;
+      flex-wrap: wrap;
+      min-height: 90vh;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .hero-text h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text h2 {
+      color: #ff80ff;
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-text p {
+      font-size: 1rem;
+      color: #ccc;
+      margin-bottom: 2rem;
+    }
+
+    .cta-btn {
+      background: linear-gradient(to right, #a259ff, #ff80ff);
+      color: #fff;
+      padding: 0.9rem 2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 16px;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+      margin-bottom: 2rem;
+      color: #ffb3ff;
+    }
+
+    .features, .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      padding: 0 10% 4rem;
+    }
+
+    .feature-box, .course-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .feature-box:hover, .course-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-box img, .course-card img {
+      height: 64px;
+      margin-bottom: 1rem;
+    }
+
+    .feature-box h3, .course-card h3 {
+      color: #a259ff;
+      margin-bottom: 0.5rem;
+    }
+
+    .feature-box p, .course-card p {
+      font-size: 0.95rem;
+      color: #ddd;
+    }
+
+    @media (max-width: 768px) {
+      .hero { flex-direction: column; text-align: center; }
+      .hero-text h1 { font-size: 2.2rem; }
+      .hero-image img { max-width: 90%; margin-top: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="floating-shapes">
+    <div class="cube shape1"></div>
+    <div class="ring shape2"></div>
+    <div class="sphere shape3"></div>
+    <div class="cube shape4"></div>
+  </div>
+<header style="position: fixed; top: 0; left: 0; width: 100%; background: rgba(15, 0, 30, 0.95); padding: 1rem 10%; display: flex; justify-content: flex-end; gap: 2rem; z-index: 999;">
+  <a href="index.html" style="color: #ffb3ff; font-weight: 600; text-decoration: none;">Home</a>
+  <a href="courses.html" style="color: #ffb3ff; font-weight: 600; text-decoration: none;">Courses</a>
+  <a href="about.html" style="color: #ffb3ff; font-weight: 600; text-decoration: none;">About</a>
+  <a href="contact.html" style="color: #ffb3ff; font-weight: 600; text-decoration: none;">Contact</a>
+  <a href="admin.html" style="color: #ffb3ff; font-weight: 600; text-decoration: none;">Admin</a>
+</header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+  <div style="display: flex; align-items: center; justify-content: center; gap: 1.5rem; margin: 0 auto 2rem; width: fit-content;">
+    <img src="https://i.ibb.co/YBMc5pn4/logo-Pica.png" alt="MK Training Center Logo"
+         style="width: 100px; height: auto;" />
+    <h2 style="color: #ff80ff; font-size: 2rem; font-weight: 700; margin: 0;">MK Training Center</h2>
+  </div>
+  <h1>Empowering Minds Through Technology</h1>
+  <h2>Welcome to MK Training Center</h2>
+  <p>Unlock your potential with our expert-led IT programs. Learn Web Development, Data Science, Java, Python, and more — all designed to prepare you for a successful tech career.</p>
+  <a href="#" class="cta-btn">Get Started</a>
+</div>
+    <div class="hero-image">
+      <img src="https://i.ibb.co/1fV4yG6J/Chat-GPT-Image-Jun-28-2025-01-03-31-PM.png" alt="Training Illustration" />
+    </div>
+  </section>
+
+ <!-- Why Choose Us -->
+<section>
+  <h2 class="section-title">Why Choose MK Training Center?</h2>
+  <div class="features">
+    
+    <!-- Expert Trainers -->
+    <div class="feature-box">
+      <img src="https://i.ibb.co/275mQY6w/Chat-GPT-Image-Jun-30-2025-07-36-06-PM.png" alt="Expert Trainers"
+           style="width: 100%; height: 160px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+      <h3>Expert Trainers</h3>
+      <p>Learn from industry professionals with real-world experience and practical knowledge.</p>
+    </div>
+
+    <!-- Recognized Certification -->
+    <div class="feature-box">
+      <img src="https://i.ibb.co/ymNjTq28/certif.webp" alt="Recognized Certification"
+           style="width: 100%; height: 160px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+      <h3>Recognized Certification</h3>
+      <p>Earn professional certificates that boost your resume and validate your skills.</p>
+    </div>
+
+    <!-- Hands-on Projects -->
+    <div class="feature-box">
+      <img src="https://i.ibb.co/3m9qfKM0/online-web-design.jpg" alt="Hands-on Projects"
+           style="width: 100%; height: 160px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+      <h3>Hands-on Projects</h3>
+      <p>Build real-world projects to strengthen your portfolio and gain confidence.</p>
+    </div>
+
+    <!-- Affordable Fees -->
+    <div class="feature-box">
+      <img src="https://i.ibb.co/tW7T4T8/best-price-offer-promotion-commerce-marketing-concept.jpg" alt="Affordable Fees"
+           style="width: 100%; height: 160px; object-fit: cover; border-radius: 10px; margin-bottom: 1rem;">
+      <h3>Affordable Fees</h3>
+      <p>Access quality education at a price that fits your budget — no hidden costs.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- AI Career Recommendation Bot -->
+<section style="background: linear-gradient(to right, #1f0036, #3b0066); padding: 4rem 10%; color: #fff;">
+  <h2 class="section-title">AI Career Recommendation Bot</h2>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem; justify-content: center;">
+    <div style="flex: 1 1 300px; text-align: center;">
+      <img src="https://i.ibb.co/5X9b9dPP/3d-delivery-robot-working.jpg" alt="AI Bot" style="max-width: 100%; border-radius: 12px;" />
+    </div>
+    <div style="flex: 1 1 400px;">
+      <h3 style="color: #ffb3ff; font-size: 1.8rem; margin-bottom: 1rem;">Your Smart Career Guide</h3>
+      <p style="font-size: 1rem; color: #ccc; margin-bottom: 1.5rem;">
+        Not sure which tech path suits you best? Try our AI-powered career bot that asks simple questions and instantly recommends roles like Web Developer, Data Analyst, Software Engineer, or Designer — tailored to your strengths and interests.
+      </p>
+      <a href="https://easy-peasy.ai/templates/career-path-generator" target="_blank" class="cta-btn">Try the AI Bot</a>
+    </div>
+  </div>
+</section>
+  <!-- Resume Analyzer Section -->
+<section style="background: radial-gradient(circle at center, #1f0036, #0a0019); padding: 4rem 10%; color: #fff;">
+  <h2 class="section-title">Resume Analyzer Tool</h2>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2rem;">
+    
+    <div style="flex: 1 1 300px; text-align: center;">
+      <img src="https://i.ibb.co/3mXnvh0q/resume-application-employment-form-concept.jpg" alt="Resume Analyzer" style="max-width: 100%; border-radius: 12px;" />
+    </div>
+
+    <div style="flex: 1 1 400px;">
+      <h3 style="color: #ffb3ff; font-size: 1.8rem; margin-bottom: 1rem;">Polish Your Resume with AI</h3>
+      <p style="font-size: 1rem; color: #ccc; margin-bottom: 1.5rem;">
+        Want to know how your resume scores in today's tech job market? Upload your resume and let our AI-based analyzer review your content, keywords, formatting, and give you real-time feedback and improvement tips.
+      </p>
+      <a href="https://resumeworded.com/" target="_blank" class="cta-btn">Try Resume Analyzer</a>
+    </div>
+  </div>
+</section>
+<!-- Practice Assessment Section -->
+<section style="background-color: #180028; padding: 4rem 10%; color: #fff;">
+  <h2 class="section-title">Practice Assessment</h2>
+  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 2rem;">
+    <div style="flex: 1 1 300px;">
+      <img src="https://i.ibb.co/VYyW6bzg/5188350.jpg" alt="Practice Test" style="width: 100%; border-radius: 12px;">
+    </div>
+    <div style="flex: 1 1 300px;">
+      <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+        Prepare for IT job interviews with real-time multiple choice questions (MCQs). Test your knowledge, identify your strengths, and improve before you attend interviews.
+      </p>
+      <a href="assessment.html" class="cta-btn" style="padding: 0.8rem 2rem; background: linear-gradient(to right, #a259ff, #ff80ff); border-radius: 30px; font-weight: bold; text-decoration: none; color: #fff;">Start Test</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+ <!-- Courses -->
+<section>
+  <h2 class="section-title">Our Top Courses</h2>
+  <div class="course-grid">
+    <div class="course-card">
+      <img src="https://i.ibb.co/992JzxMw/person-front-computer-working-html.jpg" alt="Web Development">
+      <h3>Web Development</h3>
+      <p>Master HTML, CSS, JavaScript, and modern frameworks to build responsive websites.</p>
+    </div>
+    <div class="course-card">
+      <img src="https://i.ibb.co/YTKy9x44/Whats-App-Image-2025-06-29-at-22-14-34-eb78f4a8.jpg" alt="Python Programming">
+      <h3>Python Programming</h3>
+      <p>Learn Python from basics to advanced — data handling, automation, and more.</p>
+    </div>
+    <div class="course-card">
+      <img src="https://i.ibb.co/24WrHjQ/Whats-App-Image-2025-06-29-at-22-17-46-00923bf0.jpg" alt="Data Science">
+      <h3>Data Science</h3>
+      <p>Explore machine learning, data analysis, and visualization using real datasets.</p>
+    </div>
+    <div class="course-card">
+      <img src="https://i.ibb.co/1YpMHWMG/Whats-App-Image-2025-06-29-at-22-35-58-cdadd827.jpg" alt="Tally ERP">
+      <h3>Tally ERP & GST</h3>
+      <p>Get skilled in Tally with GST and Accounting principles for business roles.</p>
+    </div>
+    <div class="course-card">
+      <img src="https://i.ibb.co/5Xc2bwVx/images-1-2-jpeg.jpg" alt="Java Programming">
+      <h3>Java Development</h3>
+      <p>Build applications with object-oriented Java and core development concepts.</p>
+    </div>
+    <div class="course-card">
+      <img src="https://i.ibb.co/NgKqSgd9/photo-1519408469771-2586093c3f14-jpeg.jpg" alt="Graphic Design">
+      <h3>Graphic Design</h3>
+      <p>Learn creative tools like Photoshop and Illustrator for stunning digital visuals.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Success Stories -->
+<section style="background-color: #29024b; padding: 4rem 10%; color: #fff;">
+  <h2 class="section-title">Student Success Stories</h2>
+  <div style="display: flex; flex-direction: column; gap: 2rem;">
+    <blockquote style="font-style: italic; border-left: 4px solid #a259ff; padding-left: 1rem;">
+      “MK Training gave me the confidence to switch careers into tech. The mentors were incredible!”
+      <footer style="margin-top: 0.5rem; font-weight: bold;">— Priya S.</footer>
+    </blockquote>
+    <blockquote style="font-style: italic; border-left: 4px solid #a259ff; padding-left: 1rem;">
+      “I landed my first job in Web Development thanks to MK’s hands-on training and placement support.”
+      <footer style="margin-top: 0.5rem; font-weight: bold;">— Arun M.</footer>
+    </blockquote>
+    <blockquote style="font-style: italic; border-left: 4px solid #a259ff; padding-left: 1rem;">
+      “Their Data Science course helped me crack multiple interviews — very practical and industry-focused.”
+      <footer style="margin-top: 0.5rem; font-weight: bold;">— Meena R.</footer>
+    </blockquote>
+  </div>
+</section>
+<!-- Stats Section -->
+<section id="stats" style="background: linear-gradient(145deg, #7f00ff, #e100ff); padding: 4rem 10%; color: #fff; text-align: center;">
+  <p style="font-size: 1.1rem; max-width: 600px; margin: 0 auto 2rem;">
+    Step into the future of professional learning. From beginner to industry expert – we guide your transformation with cutting-edge courses and personalized mentorship.
+  </p>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; margin-top: 3rem;">
+    <div style="flex: 1 1 150px;">
+      <h1 class="counter" data-target="2847" style="font-size: 3rem; margin-bottom: 0.5rem;">0</h1>
+      <p style="font-size: 1rem;">Students Trained</p>
+    </div>
+    <div style="flex: 1 1 150px;">
+      <h1 class="counter" data-target="94" style="font-size: 3rem; margin-bottom: 0.5rem;">0</h1>
+      <p style="font-size: 1rem;">% Success Rate</p>
+    </div>
+    <div style="flex: 1 1 150px;">
+      <h1 class="counter" data-target="87" style="font-size: 3rem; margin-bottom: 0.5rem;">0</h1>
+      <p style="font-size: 1rem;">% Placement</p>
+    </div>
+  </div>
+
+  <!-- ✅ Button now links to registration page -->
+  <a href="register.html" class="cta-btn" style="margin-top: 2rem; display: inline-block;">Start Your Journey 🚀</a>
+</section>
+
+
+<!-- Certification Section -->
+<section style="background: linear-gradient(to right, #32194d, #18002e); padding: 4rem 10%; text-align: center; color: #fff;">
+  <h2 class="section-title" style="margin-bottom: 3rem;">Get Certified</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+
+    <!-- Official Certificates -->
+    <div style="flex: 1 1 280px; background: #ffffff10; padding: 2rem; border-radius: 12px; display: flex; flex-direction: column; align-items: center; min-height: 460px;">
+      <img src="https://i.ibb.co/ymNjTq28/certif.webp" alt="Official Certificate"
+           style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 1.2rem;">
+      <h3 style="color: #ffb3ff; margin-bottom: 0.8rem;">Official Certificates</h3>
+      <p style="color: #ccc;">Earn industry-aligned certificates upon completing your course.</p>
+    </div>
+
+    <!-- Showcase Skills -->
+    <div style="flex: 1 1 280px; background: #ffffff10; padding: 2rem; border-radius: 12px; display: flex; flex-direction: column; align-items: center; min-height: 460px;">
+      <img src="https://i.ibb.co/S4T8h6vv/showcase-u-skill.jpg" alt="Showcase Skills"
+           style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 1.2rem;">
+      <h3 style="color: #ffb3ff; margin-bottom: 0.8rem;">Showcase Skills</h3>
+      <p style="color: #ccc;">Display certificates on LinkedIn & resumes to prove your skills.</p>
+    </div>
+
+    <!-- Resume Boost -->
+    <div style="flex: 1 1 280px; background: #ffffff10; padding: 2rem; border-radius: 12px; display: flex; flex-direction: column; align-items: center; min-height: 460px;">
+      <img src="https://i.ibb.co/XZVh3rdK/5052521.jpg" alt="Resume Boost"
+           style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 1.2rem;">
+      <h3 style="color: #ffb3ff; margin-bottom: 0.8rem;">Resume Boost</h3>
+      <p style="color: #ccc;">Stand out with verified accomplishments and badges.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Join Our Community -->
+<section style="background-color: #0e0024; padding: 4rem 10%; color: #fff;">
+  <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Join Our Community</h2>
+  <div style="
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  ">
+    
+    <!-- WhatsApp Group -->
+    <div style="
+      background: #ffffff10;
+      padding: 2rem;
+      border-left: 4px solid #a259ff;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 460px;
+    ">
+      <img src="https://i.ibb.co/ccPzbhpL/whatsapp.webp" alt="WhatsApp Group"
+        style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 1.2rem;">
+      <h3 style="color: #ffb3ff; margin-bottom: 0.8rem;">WhatsApp Groups</h3>
+      <p style="color: #ccc; text-align: center; flex-grow: 1;">Stay connected with our student & alumni communities.</p>
+      <a href="#" class="cta-btn" style="margin-top: 1rem;">Join Group</a>
+    </div>
+
+    <!-- Events Calendar -->
+    <div style="
+      background: #ffffff10;
+      padding: 2rem;
+      border-left: 4px solid #a259ff;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 460px;
+    ">
+      <img src="https://i.ibb.co/XvsXTJv/calendar.jpg" alt="Events Calendar"
+        style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 1.2rem;">
+      <h3 style="color: #ffb3ff; margin-bottom: 0.8rem;">Events Calendar</h3>
+      <p style="color: #ccc; text-align: center; flex-grow: 1;">Attend free webinars, career fairs, and project expos.</p>
+      <a href="#" class="cta-btn" style="margin-top: 1rem;">View Calendar</a>
+    </div>
+
+    <!-- Discussion Forum -->
+    <div style="
+      background: #ffffff10;
+      padding: 2rem;
+      border-left: 4px solid #a259ff;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 460px;
+    ">
+      <img src="https://i.ibb.co/v4TwwwPt/discusion-forum2.jpg" alt="Discussion Forum"
+        style="width: 100%; height: 180px; object-fit: cover; border-radius: 10px; margin-bottom: 1.2rem;">
+      <h3 style="color: #ffb3ff; margin-bottom: 0.8rem;">Discussion Forum</h3>
+      <p style="color: #ccc; text-align: center; flex-grow: 1;">Get help, share doubts, and collaborate with peers.</p>
+      <a href="#" class="cta-btn" style="margin-top: 1rem;">Visit Forum</a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer style="background-color: #1c0033; padding: 3rem 10%; color: #ccc; text-align: center;">
+  <h2 style="color: #fff; margin-bottom: 1rem;">Contact Us</h2>
+  <p>Email: <a href="mailto:contact@mktraining.com" style="color: #a259ff;">contact@mktraining.com</a></p>
+  <p>Phone: <a href="tel:+919876543210" style="color: #a259ff;">+91 98765 43210</a></p>
+  <p>Address: MK Training Center, Chennai, India</p>
+
+  <div style="margin: 2rem 0;">
+    <a href="#" style="margin: 0 10px; color: #a259ff;">Terms</a>
+    |
+    <a href="#" style="margin: 0 10px; color: #a259ff;">Privacy</a>
+    |
+    <a href="#" style="margin: 0 10px; color: #a259ff;">Newsletter</a>
+  </div>
+
+  <div style="margin-bottom: 1rem;">
+    <a href="#"><img src="https://img.icons8.com/ios-filled/32/ffffff/facebook.png" alt="FB"></a>
+    <a href="#"><img src="https://img.icons8.com/ios-filled/32/ffffff/instagram-new.png" alt="IG"></a>
+    <a href="#"><img src="https://img.icons8.com/ios-filled/32/ffffff/linkedin.png" alt="LinkedIn"></a>
+  </div>
+
+  <p style="margin-top: 1rem;">&copy; 2025 MK Training Center. All rights reserved.</p>
+</footer>
+<script>
+  const counters = document.querySelectorAll('.counter');
+  const speed = 150; // lower is faster
+
+  counters.forEach(counter => {
+    const updateCount = () => {
+      const target = +counter.getAttribute('data-target');
+      const count = +counter.innerText;
+      const inc = target / speed;
+
+      if (count < target) {
+        counter.innerText = Math.ceil(count + inc);
+        setTimeout(updateCount, 20);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCount();
+  });
+</script>
+
+
+
+
+
+</body>
+</html>
+
+
+

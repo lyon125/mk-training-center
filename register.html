@@ -1,0 +1,151 @@
+<!-- ✅ Your original design + working JavaScript -->
+<!-- register.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Registration - MK Training Center</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Your original styles... */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #1f0036, #32004d);
+      color: #fff;
+      padding: 4rem 10%;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #ffb3ff;
+    }
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      align-items: flex-start;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .form-box {
+      flex: 1 1 480px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(255, 179, 255, 0.2);
+    }
+    form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1.5rem;
+      border-radius: 6px;
+      border: none;
+      background-color: #fff;
+      color: #000;
+      font-size: 1rem;
+    }
+    textarea { resize: vertical; }
+    .submit-btn {
+      width: 100%;
+      background: linear-gradient(to right, #a259ff, #ff80ff);
+      color: white;
+      font-weight: bold;
+      padding: 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .submit-btn:hover {
+      transform: scale(1.03);
+      background: linear-gradient(to right, #ff80ff, #a259ff);
+    }
+    .image-box {
+      flex: 1 1 400px;
+      text-align: center;
+    }
+    .image-box img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(255, 128, 255, 0.3);
+    }
+    @media (max-width: 768px) {
+      body { padding: 2rem 5%; }
+      .container { flex-direction: column-reverse; }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Student Registration Form</h1>
+  <div class="container">
+    <!-- Form Section -->
+    <div class="form-box">
+      <form id="registrationForm" enctype="multipart/form-data">
+  <label for="name">Full Name</label>
+  <input type="text" id="name" name="name" required>
+
+  <label for="email">Email ID</label>
+  <input type="email" id="email" name="email" required>
+
+  <label for="phone">Phone Number</label>
+  <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+
+  <label for="course">Course of Interest</label>
+  <select id="course" name="course" required>
+    <option value="" disabled selected>Select a course</option>
+    <option value="Data Science">Data Science</option>
+    <option value="HTML">HTML</option>
+    <option value="Python">Python</option>
+    <option value="FullStack">Full Stack Development</option>
+  </select>
+
+  <label for="skills">Current Skill & Interests</label>
+  <textarea id="skills" name="skills" rows="4" required></textarea>
+
+  <label for="resume">Upload Resume</label>
+  <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" required>
+
+  <button type="submit" class="submit-btn">Register</button>
+</form>
+
+    </div>
+
+    <!-- Image Section -->
+    <div class="image-box">
+      <img src="https://i.ibb.co/q3xd4dy6/regis.jpg" alt="Student Registration">
+    </div>
+  </div>
+
+  <script>
+  document.getElementById("registrationForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const form = new FormData(this);
+
+    fetch("http://localhost:8084/api/students/register", {
+      method: "POST",
+      body: form
+    })
+    .then(res => res.text())
+    .then(data => {
+      alert("✅ " + data);
+      this.reset();
+    })
+    .catch(err => {
+      alert("❌ Error: " + err.message);
+    });
+  });
+</script>
+
+</body>
+</html>

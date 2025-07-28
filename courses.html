@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Courses | MK Training Center</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at center, #1f0036, #0a0019);
+      color: #ffffff;
+      margin: 0;
+      padding-top: 80px;
+    }
+
+    /* Header Navigation */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(15, 0, 30, 0.95);
+      padding: 1rem 0;
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      z-index: 1000;
+      border-bottom: 1px solid #a259ff40;
+    }
+
+    header a {
+      color: #ffb3ff;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+
+    header a:hover {
+      color: #ffffff;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff80ff;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .course-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 2rem 10%;
+    }
+
+    .course-card {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .course-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .course-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .course-card h2 {
+      color: #a259ff;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .course-card p {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background-color: #1c0033;
+      padding: 3rem 10%;
+      color: #ccc;
+      text-align: center;
+    }
+
+    footer h2 {
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+
+    footer a {
+      color: #a259ff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    footer .footer-links {
+      margin: 2rem 0;
+    }
+
+    footer .social-icons img {
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html">Home</a>
+    <a href="courses.html">Courses</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </header>
+
+  <!-- Title -->
+  <h1>Explore Our Courses</h1>
+
+  <!-- Course Cards -->
+  <div class="course-container">
+
+    <div class="course-card">
+      <img src="https://i.ibb.co/992JzxMw/person-front-computer-working-html.jpg" alt="Web Development">
+      <h2>Web Development</h2>
+      <p>Master front-end and back-end technologies to build modern, responsive websites and web apps using HTML, CSS, JavaScript, and frameworks.</p>
+    </div>
+
+    <div class="course-card">
+      <img src="https://i.ibb.co/YTKy9x44/Whats-App-Image-2025-06-29-at-22-14-34-eb78f4a8.jpg" alt="Python">
+      <h2>Python Programming</h2>
+      <p>Learn Python from scratch to advanced levels. Dive into data handling, automation, web scraping, and more real-world applications.</p>
+    </div>
+
+    <div class="course-card">
+      <img src="https://i.ibb.co/24WrHjQ/Whats-App-Image-2025-06-29-at-22-17-46-00923bf0.jpg" alt="Data Science">
+      <h2>Data Science</h2>
+      <p>Analyze data, build machine learning models, and visualize insights using Python, Pandas, Scikit-learn, and real datasets.</p>
+    </div>
+
+    <div class="course-card">
+      <img src="https://i.ibb.co/5Xc2bwVx/images-1-2-jpeg.jpg" alt="Java">
+      <h2>Java Development</h2>
+      <p>Build robust applications with object-oriented Java, learn core APIs, data structures, JDBC, and Spring Boot framework.</p>
+    </div>
+
+    <div class="course-card">
+      <img src="https://i.ibb.co/NgKqSgd9/photo-1519408469771-2586093c3f14-jpeg.jpg" alt="Graphic Design">
+      <h2>Graphic Design</h2>
+      <p>Master Adobe Photoshop, Illustrator, and UI tools to create stunning visuals, logos, posters, and digital designs.</p>
+    </div>
+
+    <div class="course-card">
+      <img src="https://i.ibb.co/1YpMHWMG/Whats-App-Image-2025-06-29-at-22-35-58-cdadd827.jpg" alt="Tally ERP">
+      <h2>Tally ERP & GST</h2>
+      <p>Learn business accounting with Tally, including GST implementation, reports, vouchers, inventory, and payroll features.</p>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:contact@mktraining.com">contact@mktraining.com</a></p>
+    <p>Phone: <a href="tel:+919876543210">+91 98765 43210</a></p>
+    <p>Address: MK Training Center, Chennai, India</p>
+
+    <div class="footer-links">
+      <a href="#">Terms</a> |
+      <a href="#">Privacy</a> |
+      <a href="#">Newsletter</a>
+    </div>
+
+    <div class="social-icons">
+      <a href="#"><img src="https://img.icons8.com/ios-filled/32/ffffff/facebook.png" alt="FB"></a>
+      <a href="#"><img src="https://img.icons8.com/ios-filled/32/ffffff/instagram-new.png" alt="IG"></a>
+      <a href="#"><img src="https://img.icons8.com/ios-filled/32/ffffff/linkedin.png" alt="LinkedIn"></a>
+    </div>
+
+    <p style="margin-top: 1rem;">&copy; 2025 MK Training Center. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

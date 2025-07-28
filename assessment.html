@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assessment Test | MK Training Center</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0e0024;
+      color: #fff;
+      padding: 2rem 10%;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: #a259ff;
+    }
+
+    form {
+      background: #ffffff10;
+      padding: 2rem;
+      border-radius: 12px;
+    }
+
+    .question {
+      margin-bottom: 2rem;
+    }
+
+    .question h3 {
+      color: #ffb3ff;
+    }
+
+    label {
+      display: block;
+      margin: 0.5rem 0;
+      cursor: pointer;
+    }
+
+    .submit-btn {
+      background: linear-gradient(to right, #a259ff, #ff80ff);
+      color: #fff;
+      padding: 0.8rem 2rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+
+    /* Result Overlay */
+    .result-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 2rem;
+      flex-direction: column;
+      z-index: 9999;
+      opacity: 0;
+      pointer-events: none;
+      transform: scale(0.8);
+      transition: all 0.5s ease-in-out;
+    }
+
+    .result-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: scale(1);
+    }
+
+    .result-box {
+      background: linear-gradient(to right, #a259ff, #ff80ff);
+      padding: 2rem 3rem;
+      border-radius: 20px;
+      text-align: center;
+      animation: pop 0.6s ease-in-out;
+    }
+
+    @keyframes pop {
+      0% { transform: scale(0); opacity: 0; }
+      60% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+
+    .result-box h2 {
+      margin: 0;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>IT Assessment Test</h1>
+
+  <form id="quizForm">
+    <div class="question">
+      <h3>1. What does HTML stand for?</h3>
+      <label><input type="radio" name="q1" value="a"> Hyper Text Markup Language</label>
+      <label><input type="radio" name="q1" value="b"> Home Tool Markup Language</label>
+      <label><input type="radio" name="q1" value="c"> Hyperlinks and Text Markup Language</label>
+    </div>
+
+    <div class="question">
+      <h3>2. Which language is used for web apps?</h3>
+      <label><input type="radio" name="q2" value="a"> PHP</label>
+      <label><input type="radio" name="q2" value="b"> Python</label>
+      <label><input type="radio" name="q2" value="c"> All of the above</label>
+    </div>
+
+    <div class="question">
+      <h3>3. What is the extension of a Java file?</h3>
+      <label><input type="radio" name="q3" value="a"> .jav</label>
+      <label><input type="radio" name="q3" value="b"> .java</label>
+      <label><input type="radio" name="q3" value="c"> .js</label>
+    </div>
+
+    <button type="submit" class="submit-btn">Submit</button>
+  </form>
+
+  <!-- Result Overlay -->
+  <div class="result-overlay" id="resultOverlay">
+    <div class="result-box">
+      <h2 id="resultText">You scored 0/3!</h2>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('quizForm');
+    const resultOverlay = document.getElementById('resultOverlay');
+    const resultText = document.getElementById('resultText');
+
+    const correctAnswers = {
+      q1: 'a',
+      q2: 'c',
+      q3: 'b'
+    };
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let score = 0;
+      const total = Object.keys(correctAnswers).length;
+
+      for (let key in correctAnswers) {
+        const answer = form[key].value;
+        if (answer === correctAnswers[key]) {
+          score++;
+        }
+      }
+
+      resultText.textContent = `You scored ${score}/${total}!`;
+      resultOverlay.classList.add('show');
+    });
+  </script>
+
+</body>
+</html>
