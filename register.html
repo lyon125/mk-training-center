@@ -67,27 +67,27 @@
   </div>
 
   <script>
-    document.getElementById("registrationForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      const formData = new FormData(this);
+  document.getElementById("registrationForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const formData = new FormData(this);
 
-      fetch("https://mk-training-center-backend.onrender.com/api/register", {
-        method: "POST",
-        body: formData
-      })
-      .then(res => {
-        if (!res.ok) throw new Error("Server error: " + res.status);
-        return res.text();
-      })
-      .then(data => {
-        alert("✅ " + data);
-        this.reset();
-      })
-      .catch(err => {
-        alert("❌ Error: " + err.message);
-      });
+    fetch("https://mk-training-center-backend.onrender.com/api/students/register", {
+      method: "POST",
+      body: formData
+    })
+    .then(res => {
+      if (!res.ok) throw new Error("Server error: " + res.status);
+      return res.text();
+    })
+    .then(data => {
+      alert("✅ " + data);
+      this.reset();
+    })
+    .catch(err => {
+      alert("❌ Error: " + err.message);
     });
-  </script>
+  });
+</script>
 
 </body>
 </html>
